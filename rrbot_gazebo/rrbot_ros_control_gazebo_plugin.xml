@@ -1,0 +1,11 @@
+<library path="lib/librrbot_gazebo">
+
+  <class
+    name="rrbot_gazebo/RobotSimRRBot"
+    type="rrbot_gazebo::RobotSimRRBot"
+    base_class_type="ros_control_gazebo::RobotSim">
+    <description>
+      A test robot simulation interface.
+    </description>
+  </class>
+</library>
