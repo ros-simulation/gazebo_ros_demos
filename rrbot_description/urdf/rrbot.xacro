@@ -2,18 +2,28 @@
 <!-- Revolute-Revolute Manipulator -->
 <robot name="rrbot" xmlns:xacro="http://www.ros.org/wiki/xacro">  
 
+  <!-- Constants for robot dimensions -->
   <xacro:property name="PI" value="3.1415926535897931"/>
-  <xacro:property name="width" value="0.1" />
-  <xacro:property name="height1" value="2" />
-  <xacro:property name="height2" value="1" />
-  <xacro:property name="height3" value="1" />
-  <xacro:property name="axel_offset" value="0.05" />
+  <xacro:property name="width" value="0.1" /> <!-- Square dimensions (widthxwidth) of beams -->
+  <xacro:property name="height1" value="2" /> <!-- Link 1 -->
+  <xacro:property name="height2" value="1" /> <!-- Link 2 -->
+  <xacro:property name="height3" value="1" /> <!-- Link 3 -->
+  <xacro:property name="axel_offset" value="0.05" /> <!-- Space btw top of beam and the each joint -->
 
+  <!-- Import all Gazebo-customization elements, including Gazebo colors -->
   <include filename="$(find rrbot_description)/urdf/rrbot.gazebo" />
+  <!-- Import Rviz colors -->
   <include filename="$(find rrbot_description)/urdf/materials.xacro" />
 
+  <!-- Used for fixing robot to Gazebo 'base_link' -->
   <link name="world"/>
 
+  <joint name="fixed" type="fixed">
+    <parent link="world"/>
+    <child link="link1"/>
+  </joint>
+
+  <!-- Base Link -->
   <link name="link1">
     <collision>
       <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
@@ -40,6 +50,15 @@
     </inertial>
   </link>
 
+  <joint name="joint1" type="continuous">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="0 ${width} ${height1 - axel_offset}" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.7"/>
+  </joint>
+
+  <!-- Middle Link -->
   <link name="link2">
     <collision>
       <origin xyz="0 0 ${height2/2 - axel_offset}" rpy="0 0 0"/>
@@ -66,6 +85,15 @@
     </inertial>
   </link>
 
+  <joint name="joint2" type="continuous">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="0 ${width} ${height2 - axel_offset*2}" rpy="0 0 0"/> 
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.7"/>
+  </joint>
+
+  <!-- Top Link -->
   <link name="link3">
     <collision>
       <origin xyz="0 0 ${height3/2 - axel_offset}" rpy="0 0 0"/>
@@ -91,26 +119,5 @@
         izz="1.0"/>
     </inertial>
   </link>
-
-  <joint name="fixed" type="fixed">
-    <parent link="world"/>
-    <child link="link1"/>
-  </joint>
-
-  <joint name="joint1" type="continuous">
-    <parent link="link1"/>
-    <child link="link2"/>
-    <origin xyz="0 ${width} ${height1 - axel_offset}" rpy="0 0 0"/>
-    <axis xyz="0 1 0"/>
-    <dynamics damping="0.7"/>
-  </joint>
-
-  <joint name="joint2" type="continuous">
-    <parent link="link2"/>
-    <child link="link3"/>
-    <origin xyz="0 ${width} ${height2 - axel_offset*2}" rpy="0 0 0"/> 
-    <axis xyz="0 1 0"/>
-    <dynamics damping="0.7"/>
-  </joint>
 
 </robot>
