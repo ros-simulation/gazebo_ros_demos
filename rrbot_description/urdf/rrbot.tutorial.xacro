@@ -1,6 +1,8 @@
 <?xml version="1.0"?> 
 <!-- Revolute-Revolute Manipulator -->
-<robot name="rrbot" xmlns:xacro="http://www.ros.org/wiki/xacro">  
+<robot name="rrbot"
+  xmlns:xacro="http://www.ros.org/wiki/xacro"
+  xmlns:controller="http://playerstage.sourceforge.net/gazebo/xmlschema/#controller">
 
   <xacro:property name="PI" value="3.1415926535897931"/>
   <xacro:property name="width" value="0.1" />
@@ -8,9 +10,6 @@
   <xacro:property name="height2" value="1" />
   <xacro:property name="height3" value="1" />
   <xacro:property name="axel_offset" value="0.05" />
-
-  <include filename="$(find rrbot_description)/urdf/rrbot.gazebo" />
-  <include filename="$(find rrbot_description)/urdf/materials.xacro" />
 
   <link name="world"/>
 
@@ -27,7 +26,9 @@
       <geometry>
 	<box size="${width} ${width} ${height1}"/>
       </geometry>
-      <material name="orange"/>
+      <material name="red">
+	<color rgba="0.6 0 0 1.0"/>
+      </material>
     </visual>
 
     <inertial>
@@ -53,7 +54,9 @@
       <geometry> 
 	<box size="${width} ${width} ${height2}"/>
       </geometry>
-      <material name="black"/>
+      <material name="green">
+	<color rgba="0 0.6 0 1.0"/>
+      </material>
     </visual>
 
     <inertial>
@@ -79,7 +82,9 @@
       <geometry> 
 	<box size="${width} ${width} ${height3}"/>
       </geometry>
-      <material name="orange"/>
+      <material name="blue">
+	<color rgba="0 0 0.6 1.0"/>
+      </material>
     </visual>
 
     <inertial>

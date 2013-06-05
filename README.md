@@ -1,8 +1,9 @@
 # gazebo_ros_demos
 Author: Dave Coleman <davetcoleman@gmail.com>
-Date: 6/4/13
 
+Date: 4 June 2013
 
+Example robots and code for interfacing Gazebo with ROS
 
 ## Documentation and Tutorials
 [On gazebosim.org](http://gazebosim.org/wiki/Tutorials#ROS_Integration)

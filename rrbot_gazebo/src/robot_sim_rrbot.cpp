@@ -64,7 +64,6 @@ namespace rrbot_gazebo {
       joint_effort_command_(n_dof_),
       joint_velocity_command_(n_dof_)
     {
-
       joint_name_[0] = "joint1";
       joint_name_[1] = "joint2";
 
@@ -72,7 +71,7 @@ namespace rrbot_gazebo {
       {
         joint_position_[j] = 1.0;
         joint_velocity_[j] = 0.0;
-        joint_effort_[j] = 0.1;
+        joint_effort_[j] = 1.0;  // N/m for continuous joints
         joint_effort_command_[j] = 0.0;
         joint_velocity_command_[j] = 0.0;
 
@@ -149,4 +148,4 @@ namespace rrbot_gazebo {
 
 }
 
-PLUGINLIB_DECLARE_CLASS(rrbot_gazebo, RobotSimRRBot, rrbot_gazebo::RobotSimRRBot, ros_control_gazebo::RobotSim)
+PLUGINLIB_EXPORT_CLASS(rrbot_gazebo::RobotSimRRBot, ros_control_gazebo::RobotSim)
