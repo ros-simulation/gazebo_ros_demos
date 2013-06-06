@@ -1,9 +1,24 @@
 <launch>
-  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
 
+  <!-- roslaunch arguments -->
+  <arg name="debug" default="false"/>
+
+  <!-- We resume the logic in empty_world.launch, changing only the name of the world to be launched -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find rrbot_gazebo)/world/rrbot.world"/>
+    <!-- more default parameters can be changed here -->
+    <arg name="debug" value="$(arg debug)" />
+  </include>
+
+  <!-- Load the URDF into the ROS Parameter Server -->
   <param name="robot_description"
     command="$(find xacro)/xacro.py '$(find rrbot_description)/urdf/rrbot.xacro'" />
 
+  <!-- Call a python script to the run a service call to gazebo_ros to spawn a URDF robot -->
+  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+	args="-urdf -model rrbot -param robot_description"/>
+
+  <!-- ros_control settings -->
   <rosparam ns="rrbot/ros_control">
     joint1_position_controller:
       type: effort_controllers/JointPositionController
@@ -14,7 +29,5 @@
       joint: joint2
       pid: {p: 100.0, i: 0.01, d: 10.0}
   </rosparam>
-
-  <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -model rrbot -param robot_description"/>
 
 </launch>
