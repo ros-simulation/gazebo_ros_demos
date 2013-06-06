@@ -8,12 +8,11 @@
 
   <license>BSD</license>
 
-  <!-- Url tags are optional, but mutiple are allowed, one per tag -->
-  <!-- Optional attribute type can be: website, bugtracker, or repository -->
-  <!-- Example: -->
-  <!-- <url type="website">http://ros.org/wiki/rrbot_description</url> -->
+  <url type="website">http://http://gazebosim.org/w/index.php?title=Tutorials/1.9/Using_A_URDF_In_Gazebo</url>
+  <url type="bugtracker">https://github.com/osrf/gazebo_ros_demos/issues</url>
+  <url type="repository">https://github.com/osrf/gazebo_ros_demos</url>
 
-  <author>Dave Coleman</author>
+  <author email="davetcoleman@gmail.com">Dave Coleman</author>
 
   <buildtool_depend>catkin</buildtool_depend>
 

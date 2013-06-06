@@ -1,5 +1,5 @@
 <package>
-  <name>rrbot_gazebo</name>
+  <name>rrbot_gazebo_plugins</name>
   <version>0.1.0</version>
   <description>rrbot_gazebo</description>
   <maintainer email="davetcoleman@gmail.com">Dave Coleman</maintainer>
@@ -20,6 +20,7 @@
   <build_depend>gazebo_ros</build_depend> 
   <build_depend>hardware_interface</build_depend> 
   <run_depend>rrbot_description</run_depend> 
+  <run_depend>rrbot_gazebo</run_depend> 
   <run_depend>hardware_interface</run_depend> 
   <run_depend>ros_control_gazebo</run_depend> 
   <run_depend>ros_control_gazebo_plugin</run_depend> 
@@ -27,5 +28,6 @@
   <run_depend>gazebo_ros</run_depend> 
 
   <export>
+    <ros_control_gazebo plugin="${prefix}/rrbot_ros_control_gazebo_plugin.xml"/>
   </export>
 </package>
