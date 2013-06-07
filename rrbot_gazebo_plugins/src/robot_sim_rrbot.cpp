@@ -64,6 +64,7 @@ namespace rrbot_gazebo {
       joint_effort_command_(n_dof_),
       joint_velocity_command_(n_dof_)
     {
+      // Move this out
       joint_name_[0] = "joint1";
       joint_name_[1] = "joint2";
 
