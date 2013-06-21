@@ -1,6 +1,6 @@
-<?xml version="1.0"?> 
+<?xml version="1.0"?>
 <!-- Revolute-Revolute Manipulator -->
-<robot name="rrbot" xmlns:xacro="http://www.ros.org/wiki/xacro">  
+<robot name="rrbot" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
   <!-- Constants for robot dimensions -->
   <xacro:property name="PI" value="3.1415926535897931"/>
@@ -44,10 +44,10 @@
     <inertial>
       <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
       <mass value="1"/>
-      <inertia 
-        ixx="1.0" ixy="0.0" ixz="0.0" 
-        iyy="1.0" iyz="0.0" 
-        izz="1.0"/>
+      <inertia
+	  ixx="1.0" ixy="0.0" ixz="0.0"
+	  iyy="1.0" iyz="0.0"
+	  izz="1.0"/>
     </inertial>
   </link>
 
@@ -63,14 +63,14 @@
   <link name="link2">
     <collision>
       <origin xyz="0 0 ${height2/2 - axel_offset}" rpy="0 0 0"/>
-      <geometry> 
+      <geometry>
 	<box size="${width} ${width} ${height2}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 ${height2/2 - axel_offset}" rpy="0 0 0"/>
-      <geometry> 
+      <geometry>
 	<box size="${width} ${width} ${height2}"/>
       </geometry>
       <material name="black"/>
@@ -79,17 +79,17 @@
     <inertial>
       <origin xyz="0 0 ${height2/2 - axel_offset}" rpy="0 0 0"/>
       <mass value="1"/>
-      <inertia 
-        ixx="1.0" ixy="0.0" ixz="0.0" 
-        iyy="1.0" iyz="0.0" 
-        izz="1.0"/>
+      <inertia
+	  ixx="1.0" ixy="0.0" ixz="0.0"
+	  iyy="1.0" iyz="0.0"
+	  izz="1.0"/>
     </inertial>
   </link>
 
   <joint name="joint2" type="continuous">
     <parent link="link2"/>
     <child link="link3"/>
-    <origin xyz="0 ${width} ${height2 - axel_offset*2}" rpy="0 0 0"/> 
+    <origin xyz="0 ${width} ${height2 - axel_offset*2}" rpy="0 0 0"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0.7"/>
   </joint>
@@ -98,14 +98,14 @@
   <link name="link3">
     <collision>
       <origin xyz="0 0 ${height3/2 - axel_offset}" rpy="0 0 0"/>
-      <geometry> 
+      <geometry>
 	<box size="${width} ${width} ${height3}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 ${height3/2 - axel_offset}" rpy="0 0 0"/>
-      <geometry> 
+      <geometry>
 	<box size="${width} ${width} ${height3}"/>
       </geometry>
       <material name="orange"/>
@@ -114,10 +114,10 @@
     <inertial>
       <origin xyz="0 0 ${height3/2 - axel_offset}" rpy="0 0 0"/>
       <mass value="1"/>
-      <inertia 
-        ixx="1.0" ixy="0.0" ixz="0.0" 
-        iyy="1.0" iyz="0.0" 
-        izz="1.0"/>
+      <inertia
+	  ixx="1.0" ixy="0.0" ixz="0.0"
+	  iyy="1.0" iyz="0.0"
+	  izz="1.0"/>
     </inertial>
   </link>
 
@@ -182,8 +182,16 @@
     </inertial>
   </link>
 
+  <!--transmission name="joint1_trans" type="pr2_mechanism_model/SimpleTransmission">
+    <actuator name="joint1_motor"/>
+    <joint name="joint1"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
 
-
-  
+  <transmission name="joint2_trans" type="pr2_mechanism_model/SimpleTransmission">
+    <actuator name="joint2_motor"/>
+    <joint name="joint2"/>
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission-->
 
 </robot>
