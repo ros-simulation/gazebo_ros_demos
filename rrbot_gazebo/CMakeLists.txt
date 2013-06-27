@@ -12,7 +12,7 @@ find_package(catkin REQUIRED COMPONENTS gazebo_ros)
 ## INCLUDE_DIRS: 
 ## LIBRARIES: libraries you create in this project that dependent projects also need
 catkin_package(
-    DEPENDS gazebo_ros
+    DEPENDS 
     CATKIN_DEPENDS # TODO
     INCLUDE_DIRS # TODO include
     LIBRARIES # TODO

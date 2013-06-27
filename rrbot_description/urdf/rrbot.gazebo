@@ -4,20 +4,9 @@
   <!-- ros_control plugin -->
   <gazebo>
     <plugin name="ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>rrbot/ros_control</robotNamespace>
-      <controlPeriod>0.001</controlPeriod>
-      <joint>joint1</joint>
-      <joint>joint2</joint>
+      <robotNamespace>/rrbot</robotNamespace>
     </plugin>
   </gazebo>
-
-  <!--gazebo>
-    <plugin name="ros_control" filename="libros_control_gazebo_plugin.so">
-      <ns>rrbot/ros_control</ns>
-      <robotSimType>rrbot_gazebo/RobotSimRRBot</robotSimType>
-      <controlPeriod>0.001</controlPeriod>
-    </plugin>
-  </gazebo-->
 
   <!-- Link1 -->
   <gazebo reference="link1">

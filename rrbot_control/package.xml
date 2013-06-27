@@ -1,12 +1,14 @@
+<?xml version="1.0"?>
 <package>
-  <name>rrbot_gazebo</name>
-  <version>0.1.0</version>
-  <description>rrbot_gazebo</description>
+  <name>rrbot_control</name>
+  <version>0.0.0</version>
+  <description>The rrbot_control package</description>
+
   <maintainer email="davetcoleman@gmail.com">Dave Coleman</maintainer>
 
   <license>BSD</license>
 
-  <url type="website">http://gazebosim.org/w/index.php?title=Tutorials/1.9/Using_A_URDF_In_Gazebo</url>
+  <url type="website">http://http://gazebosim.org/w/index.php?title=Tutorials/1.9/Using_A_URDF_In_Gazebo</url>
   <url type="bugtracker">https://github.com/osrf/gazebo_ros_demos/issues</url>
   <url type="repository">https://github.com/osrf/gazebo_ros_demos</url>
 
@@ -14,11 +16,9 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <run_depend>rrbot_description</run_depend>
-  <run_depend>rrbot_control</run_depend> 
-  <run_depend>xacro</run_depend>
-  <run_depend>gazebo_ros</run_depend> 
+  <run_depend>controller_manager</run_depend>
 
   <export>
   </export>
+
 </package>

@@ -182,16 +182,16 @@
     </inertial>
   </link>
 
-  <!--transmission name="joint1_trans" type="pr2_mechanism_model/SimpleTransmission">
-    <actuator name="joint1_motor"/>
+  <transmission name="tran1" type="transmission_interface/SimpleTransmission">
     <joint name="joint1"/>
+    <actuator name="motor1" type="EffortJointInterface" />
     <mechanicalReduction>1</mechanicalReduction>
   </transmission>
 
-  <transmission name="joint2_trans" type="pr2_mechanism_model/SimpleTransmission">
-    <actuator name="joint2_motor"/>
+  <transmission name="tran2" type="transmission_interface/SimpleTransmission">
     <joint name="joint2"/>
+    <actuator name="motor2" type="EffortJointInterface" />
     <mechanicalReduction>1</mechanicalReduction>
-  </transmission-->
+  </transmission>
 
 </robot>
