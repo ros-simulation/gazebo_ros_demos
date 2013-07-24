@@ -7,6 +7,6 @@
 					  joint2_position_controller"/>
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam file="$(find rrbot_control)/config/rrbot_ros_control.yaml" command="load"/>
+  <rosparam file="$(find rrbot_control)/config/rrbot_control.yaml" command="load"/>
 
 </launch>

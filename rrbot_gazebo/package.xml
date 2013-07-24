@@ -16,7 +16,6 @@
 
   <run_depend>rrbot_description</run_depend>
   <run_depend>rrbot_control</run_depend> 
-  <run_depend>xacro</run_depend>
   <run_depend>gazebo_ros</run_depend> 
 
   <export>
