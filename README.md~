@@ -3,7 +3,6 @@
 * License: GNU General Public License, version 3 (GPL-3.0)
 * Inception Date: 4 June 2013
 * Version: 1.0.0
-* Update by \_ArnO_ to use a velocity controller
 
 Example robots and code for interfacing Gazebo with ROS
 
