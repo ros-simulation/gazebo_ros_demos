@@ -191,13 +191,4 @@
     </actuator>
   </transmission>
 
-  <transmission name="tran2">
-    <type>transmission_interface/SimpleTransmission</type>
-    <joint name="joint2"/>
-    <actuator name="motor2">
-      <hardwareInterface>VelocityJointInterface</hardwareInterface>
-      <mechanicalReduction>1</mechanicalReduction>
-    </actuator>
-  </transmission>
-
 </robot>
