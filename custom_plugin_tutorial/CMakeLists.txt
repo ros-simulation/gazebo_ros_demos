@@ -21,3 +21,9 @@ catkin_package(
     roscpp
     gazebo_ros
 )
+
+install(DIRECTORY launch
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
+
+install(DIRECTORY worlds
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION})
