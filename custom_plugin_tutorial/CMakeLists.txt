@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 2.8.3)
 project(gazebo_tutorials)
 
 # Load catkin and all dependencies required for this package
-find_package(catkin REQUIRED COMPONENTS 
-  roscpp 
-  gazebo_ros 
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  gazebo_ros
 )
 
 # Depend on system install of Gazebo
@@ -17,7 +17,7 @@ add_library(${PROJECT_NAME} src/simple_world_plugin.cpp)
 target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES} ${GAZEBO_LIBRARIES})
 
 catkin_package(
-  DEPENDS 
-    roscpp 
-    gazebo_ros 
+  DEPENDS
+    roscpp
+    gazebo_ros
 )
