@@ -7,7 +7,7 @@
 Example robots and code for interfacing Gazebo with ROS
 
 ## Documentation and Tutorials
-[On gazebosim.org](http://gazebosim.org/wiki/Tutorials#ROS_Integration)
+[On gazebosim.org](http://gazebosim.org/tutorials?cat=connect_ros)
 
 ## Develop and Contribute
 
