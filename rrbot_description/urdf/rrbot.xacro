@@ -4,6 +4,7 @@
 
   <!-- Constants for robot dimensions -->
   <xacro:property name="PI" value="3.1415926535897931"/>
+  <xacro:property name="mass" value="1" /> <!-- arbitrary value for mass -->
   <xacro:property name="width" value="0.1" /> <!-- Square dimensions (widthxwidth) of beams -->
   <xacro:property name="height1" value="2" /> <!-- Link 1 -->
   <xacro:property name="height2" value="1" /> <!-- Link 2 -->
@@ -43,11 +44,11 @@
 
     <inertial>
       <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
-      <mass value="1"/>
+      <mass value="${mass}"/>
       <inertia
-	  ixx="1.0" ixy="0.0" ixz="0.0"
-	  iyy="1.0" iyz="0.0"
-	  izz="1.0"/>
+	  ixx="${mass / 12.0 * (width*width + height1*height1)}" ixy="0.0" ixz="0.0"
+	  iyy="${mass / 12.0 * (height1*height1 + width*width)}" iyz="0.0"
+	  izz="${mass / 12.0 * (width*width + width*width)}"/>
     </inertial>
   </link>
 
@@ -78,11 +79,11 @@
 
     <inertial>
       <origin xyz="0 0 ${height2/2 - axel_offset}" rpy="0 0 0"/>
-      <mass value="1"/>
+      <mass value="${mass}"/>
       <inertia
-	  ixx="1.0" ixy="0.0" ixz="0.0"
-	  iyy="1.0" iyz="0.0"
-	  izz="1.0"/>
+	  ixx="${mass / 12.0 * (width*width + height2*height2)}" ixy="0.0" ixz="0.0"
+	  iyy="${mass / 12.0 * (height2*height2 + width*width)}" iyz="0.0"
+	  izz="${mass / 12.0 * (width*width + width*width)}"/>
     </inertial>
   </link>
 
@@ -113,11 +114,11 @@
 
     <inertial>
       <origin xyz="0 0 ${height3/2 - axel_offset}" rpy="0 0 0"/>
-      <mass value="1"/>
+      <mass value="${mass}"/>
       <inertia
-	  ixx="1.0" ixy="0.0" ixz="0.0"
-	  iyy="1.0" iyz="0.0"
-	  izz="1.0"/>
+	  ixx="${mass / 12.0 * (width*width + height3*height3)}" ixy="0.0" ixz="0.0"
+	  iyy="${mass / 12.0 * (height3*height3 + width*width)}" iyz="0.0"
+	  izz="${mass / 12.0 * (width*width + width*width)}"/>
     </inertial>
   </link>
 
