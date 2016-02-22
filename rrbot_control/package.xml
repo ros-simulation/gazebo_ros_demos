@@ -17,6 +17,12 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <run_depend>controller_manager</run_depend>
+  <run_depend>joint_state_controller</run_depend>
+  <run_depend>robot_state_publisher</run_depend>
+
+  <run_depend>rqt_gui</run_depend>
+  <run_depend>effort_controllers</run_depend>
+
 
   <export>
   </export>
