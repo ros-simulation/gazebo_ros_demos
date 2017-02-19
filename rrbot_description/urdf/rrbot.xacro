@@ -183,6 +183,30 @@
     </inertial>
   </link>
 
+  <joint name="display_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 -0.016 0.0"/>
+    <parent link="link3"/>
+    <child link="display"/>
+  </joint>
+
+  <!-- Screen Display -->
+  <link name="display">
+    <visual>
+      <origin rpy="0.2617993877991494 0 0" xyz="0 0 0"/>
+      <geometry>
+        <box size="0.218 0.16 0.001"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <inertial>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <mass value="0.0001"/>
+      <inertia ixx="1e-08" ixy="0" ixz="0" iyy="1e-08" iyz="0" izz="1e-08"/>
+    </inertial>
+  </link>
+
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint1">

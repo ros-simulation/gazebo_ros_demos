@@ -117,4 +117,16 @@
     </sensor>
   </gazebo>
 
+  <!-- Screen Display -->
+  <gazebo reference="display">
+    <visual>
+        <plugin name="screen_video_controller" filename="libgazebo_ros_video.so">
+          <height>600</height>
+          <width>1024</width>
+          <topicName>/robot/xdisplay</topicName>
+          <robotNamespace>/robot</robotNamespace>
+        </plugin>
+    </visual>
+  </gazebo>
+
 </robot>
