@@ -15,7 +15,4 @@
     <remap from="/joint_states" to="/rrbot/joint_states" />
   </node>
 
-  <!-- Show in Rviz   -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find rrbot_description)/launch/rrbot.rviz"/>
-
 </launch>

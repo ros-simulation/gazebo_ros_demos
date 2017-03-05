@@ -104,7 +104,7 @@
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera_link_optical</frameName>
         <!-- setting hackBaseline to anything but 0.0 will cause a misalignment
-            between the gazebo sensor image and the frame it is supposed to 
+            between the gazebo sensor image and the frame it is supposed to
             be attached to -->
         <hackBaseline>0.0</hackBaseline>
         <distortionK1>0.0</distortionK1>
