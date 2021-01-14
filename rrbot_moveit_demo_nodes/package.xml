@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>rrbot_moveit_demo_nodes</name>
+  <version>0.0.0</version>
+  <description>Config and launch files to run rrbot demos with ROS 2, gazebo and moveit2</description>
+  <maintainer email="alejandro@openrobotics.org">Alejandro Hernández</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <build_depend>moveit_common</build_depend>
+
+  <depend>moveit_ros_planning_interface</depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

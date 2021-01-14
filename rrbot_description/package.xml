@@ -14,12 +14,12 @@
 
   <author email="davetcoleman@gmail.com">Dave Coleman</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <run_depend>joint_state_publisher</run_depend>
-  <run_depend>robot_state_publisher</run_depend>
-  <run_depend>rviz</run_depend>
+  <run_depend>rviz2</run_depend>
 
   <export>
+      <build_type>ament_cmake</build_type>
   </export>
+
 </package>

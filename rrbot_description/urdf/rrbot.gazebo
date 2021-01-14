@@ -3,9 +3,10 @@
 
   <!-- ros_control plugin -->
   <gazebo>
-    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-      <robotNamespace>/rrbot</robotNamespace>
-      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
+      <parameters>$(find rrbot_moveit_demo_nodes)/config/gazebo_controllers.yaml</parameters>
+      <control_period>0.001</control_period>
     </plugin>
   </gazebo>
 
@@ -65,9 +66,12 @@
           <stddev>0.01</stddev>
         </noise>
       </ray>
-      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
-        <topicName>/rrbot/laser/scan</topicName>
-        <frameName>hokuyo_link</frameName>
+      <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_ray_sensor.so">
+        <ros>
+           <namespace>/rrbot</namespace>
+           <remapping>~/out:=laser/scan</remapping>
+         </ros>
+         <output_type>sensor_msgs/LaserScan</output_type>
       </plugin>
     </sensor>
   </gazebo>

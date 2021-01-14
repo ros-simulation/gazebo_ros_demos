@@ -30,14 +30,14 @@
     <collision>
       <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} ${height1}"/>
+	       <box size="${width} ${width} ${height1}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} ${height1}"/>
+	       <box size="${width} ${width} ${height1}"/>
       </geometry>
       <material name="orange"/>
     </visual>
@@ -65,14 +65,14 @@
     <collision>
       <origin xyz="0 0 ${height2/2 - axel_offset}" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} ${height2}"/>
+	       <box size="${width} ${width} ${height2}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 ${height2/2 - axel_offset}" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} ${height2}"/>
+	       <box size="${width} ${width} ${height2}"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -100,14 +100,14 @@
     <collision>
       <origin xyz="0 0 ${height3/2 - axel_offset}" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} ${height3}"/>
+	       <box size="${width} ${width} ${height3}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 ${height3/2 - axel_offset}" rpy="0 0 0"/>
       <geometry>
-	<box size="${width} ${width} ${height3}"/>
+	       <box size="${width} ${width} ${height3}"/>
       </geometry>
       <material name="orange"/>
     </visual>
@@ -134,14 +134,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	<box size="0.1 0.1 0.1"/>
+	       <box size="0.1 0.1 0.1"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="package://rrbot_description/meshes/hokuyo.dae"/>
+        <mesh filename="$(find rrbot_description)/meshes/hokuyo.dae"/>
       </geometry>
     </visual>
 
@@ -164,14 +164,14 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	<box size="${camera_link} ${camera_link} ${camera_link}"/>
+	       <box size="${camera_link} ${camera_link} ${camera_link}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	<box size="${camera_link} ${camera_link} ${camera_link}"/>
+	       <box size="${camera_link} ${camera_link} ${camera_link}"/>
       </geometry>
       <material name="red"/>
     </visual>
@@ -199,10 +199,10 @@
   <transmission name="tran1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor1">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
@@ -210,10 +210,10 @@
   <transmission name="tran2">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="joint2">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
     </joint>
     <actuator name="motor2">
-      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
       <mechanicalReduction>1</mechanicalReduction>
     </actuator>
   </transmission>
