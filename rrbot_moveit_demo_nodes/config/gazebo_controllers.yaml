@@ -11,8 +11,3 @@ rrbot_arm_controller:
     write_op_modes:
        - joint1
        - joint2
-    state_publish_rate: 25
-    action_monitor_rate: 20
-    constraints:
-      stopped_velocity_tolerance: 0.05
-      goal_time: 5
