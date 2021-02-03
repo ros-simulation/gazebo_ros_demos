@@ -6,6 +6,7 @@
   <description>Config and launch files to run rrbot demos with ROS 2, gazebo and moveit2</description>
   <maintainer email="alejandro@openrobotics.org">Alejandro Hernández</maintainer>
   <license>Apache 2</license>
+  <license>BSD</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 
