@@ -5,12 +5,21 @@
   <version>0.0.0</version>
   <description>Config and launch files to run rrbot demos with ROS 2, gazebo and moveit2</description>
   <maintainer email="alejandro@openrobotics.org">Alejandro Hernández</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache 2</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
-  <build_depend>moveit_common</build_depend>
 
+  <depend>moveit_common</depend>
+  <depend>moveit_msgs</depend>
   <depend>moveit_ros_planning_interface</depend>
+  <depend>rclcpp</depend>
+  <depend>trajectory_msgs</depend>
+
+  <exec_depend>rrbot_description</exec_depend>
+  <exec_depend>rrbot_gazebo</exec_depend>
+  <exec_depend>rrbot_moveit_config</exec_depend>
+  <exec_depend>rviz2</exec_depend>
+  <exec_depend>xacro</exec_depend>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>

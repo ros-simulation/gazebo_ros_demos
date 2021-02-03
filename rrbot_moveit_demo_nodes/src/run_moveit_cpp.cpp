@@ -32,8 +32,10 @@
  *  POSSIBILITY OF SUCH DAMAGE.
  *********************************************************************/
 
-/* Author: Henning Kayser
-   Desc: A simple demo node running MoveItCpp for planning and execution
+/*
+  This code was taken from the moveit 2 repository and mofied to work with rrbot_arm
+  https://github.com/ros-planning/moveit2/tree/main/moveit_demo_nodes/run_moveit_cpp/src
+  Desc: A simple demo node running MoveItCpp for planning and execution
 */
 
 #include <thread>

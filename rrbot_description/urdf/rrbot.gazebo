@@ -6,7 +6,6 @@
     <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
       <robot_sim_type>gazebo_ros2_control/GazeboSystem</robot_sim_type>
       <parameters>$(find rrbot_moveit_demo_nodes)/config/gazebo_controllers.yaml</parameters>
-      <control_period>0.001</control_period>
     </plugin>
   </gazebo>
 

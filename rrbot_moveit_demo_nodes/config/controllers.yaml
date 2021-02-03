@@ -1,7 +1,7 @@
 controller_names:
-  - rrbot_arm_controller
+  - joint_trajectory_controller
 
-rrbot_arm_controller:
+joint_trajectory_controller:
   action_ns: follow_joint_trajectory
   type: FollowJointTrajectory
   default: true
