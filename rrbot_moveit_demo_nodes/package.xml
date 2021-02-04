@@ -3,7 +3,10 @@
 <package format="3">
   <name>rrbot_moveit_demo_nodes</name>
   <version>0.0.0</version>
-  <description>Config and launch files to run rrbot demos with ROS 2, gazebo and moveit2</description>
+  <description>
+    Config and launch files to run a MoveIt2 demo with the rrbot.
+    This example will use Gazebo classic to simulate the robot and ROS 2 to communicate the rrbot with MoveIt2.
+  </description>
   <maintainer email="alejandro@openrobotics.org">Alejandro Hernández</maintainer>
   <license>Apache 2</license>
   <license>BSD</license>

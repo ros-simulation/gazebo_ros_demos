@@ -3,7 +3,9 @@
 <package format="3">
   <name>rrbot_gazebo</name>
   <version>0.0.0</version>
-  <description>rrbot_gazebo</description>
+  <description>
+    Launch files and worlds to launch the rrbot in Gazebo, this will publish the joint states in ROS 2.
+  </description>
   <maintainer email="davetcoleman@gmail.com">Dave Coleman</maintainer>
 
   <license>BSD</license>
