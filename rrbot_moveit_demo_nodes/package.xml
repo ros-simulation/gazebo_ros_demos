@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>rrbot_moveit_demo_nodes</name>
-  <version>0.0.0</version>
+  <version>0.2.0</version>
   <description>
     Config and launch files to run a MoveIt2 demo with the rrbot.
     This example will use Gazebo classic to simulate the robot and ROS 2 to communicate the rrbot with MoveIt2.

@@ -2,7 +2,7 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>rrbot_gazebo</name>
-  <version>0.0.0</version>
+  <version>0.2.0</version>
   <description>
     Launch files and worlds to launch the rrbot in Gazebo, this will publish the joint states in ROS 2.
   </description>

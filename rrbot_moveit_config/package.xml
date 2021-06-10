@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>rrbot_moveit_config</name>
-  <version>0.0.0</version>
+  <version>0.2.0</version>
   <description>Rrbot files used for MoveIt config</description>
 
   <author email="alejandro@openrobotics.org">Alejandro</author>
