@@ -4,18 +4,25 @@
 
   <!-- Constants for robot dimensions -->
   <xacro:property name="PI" value="3.1415926535897931"/>
-  <xacro:property name="mass" value="1" /> <!-- arbitrary value for mass -->
-  <xacro:property name="width" value="0.1" /> <!-- Square dimensions (widthxwidth) of beams -->
-  <xacro:property name="height1" value="2" /> <!-- Link 1 -->
-  <xacro:property name="height2" value="1" /> <!-- Link 2 -->
-  <xacro:property name="height3" value="1" /> <!-- Link 3 -->
-  <xacro:property name="camera_link" value="0.05" /> <!-- Size of square 'camera' box -->
-  <xacro:property name="axel_offset" value="0.05" /> <!-- Space btw top of beam and the each joint -->
+  <!-- arbitrary value for mass -->
+  <xacro:property name="mass" value="1"/>
+  <!-- Square dimensions (widthxwidth) of beams -->
+  <xacro:property name="width" value="0.1"/>
+  <!-- Link 1 -->
+  <xacro:property name="height1" value="2"/>
+  <!-- Link 2 -->
+  <xacro:property name="height2" value="1"/>
+  <!-- Link 3 -->
+  <xacro:property name="height3" value="1"/>
+  <!-- Size of square 'camera' box -->
+  <xacro:property name="camera_link" value="0.05"/>
+  <!-- Space btw top of beam and the each joint -->
+  <xacro:property name="axel_offset" value="0.05"/>
 
   <!-- Import all Gazebo-customization elements, including Gazebo colors -->
-  <xacro:include filename="$(find rrbot_description)/urdf/rrbot.gazebo" />
+  <xacro:include filename="$(find rrbot_description)/urdf/rrbot.gazebo"/>
   <!-- Import Rviz colors -->
-  <xacro:include filename="$(find rrbot_description)/urdf/materials.xacro" />
+  <xacro:include filename="$(find rrbot_description)/urdf/materials.xacro"/>
 
   <!-- Used for fixing robot to Gazebo 'base_link' -->
   <link name="world"/>
@@ -30,14 +37,14 @@
     <collision>
       <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
       <geometry>
-	       <box size="${width} ${width} ${height1}"/>
+        <box size="${width} ${width} ${height1}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
       <geometry>
-	       <box size="${width} ${width} ${height1}"/>
+        <box size="${width} ${width} ${height1}"/>
       </geometry>
       <material name="orange"/>
     </visual>
@@ -45,10 +52,7 @@
     <inertial>
       <origin xyz="0 0 ${height1/2}" rpy="0 0 0"/>
       <mass value="${mass}"/>
-      <inertia
-	  ixx="${mass / 12.0 * (width*width + height1*height1)}" ixy="0.0" ixz="0.0"
-	  iyy="${mass / 12.0 * (height1*height1 + width*width)}" iyz="0.0"
-	  izz="${mass / 12.0 * (width*width + width*width)}"/>
+      <inertia ixx="${mass / 12.0 * (width*width + height1*height1)}" ixy="0.0" ixz="0.0" iyy="${mass / 12.0 * (height1*height1 + width*width)}" iyz="0.0" izz="${mass / 12.0 * (width*width + width*width)}"/>
     </inertial>
   </link>
 
@@ -65,14 +69,14 @@
     <collision>
       <origin xyz="0 0 ${height2/2 - axel_offset}" rpy="0 0 0"/>
       <geometry>
-	       <box size="${width} ${width} ${height2}"/>
+        <box size="${width} ${width} ${height2}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 ${height2/2 - axel_offset}" rpy="0 0 0"/>
       <geometry>
-	       <box size="${width} ${width} ${height2}"/>
+        <box size="${width} ${width} ${height2}"/>
       </geometry>
       <material name="black"/>
     </visual>
@@ -80,10 +84,7 @@
     <inertial>
       <origin xyz="0 0 ${height2/2 - axel_offset}" rpy="0 0 0"/>
       <mass value="${mass}"/>
-      <inertia
-	  ixx="${mass / 12.0 * (width*width + height2*height2)}" ixy="0.0" ixz="0.0"
-	  iyy="${mass / 12.0 * (height2*height2 + width*width)}" iyz="0.0"
-	  izz="${mass / 12.0 * (width*width + width*width)}"/>
+      <inertia ixx="${mass / 12.0 * (width*width + height2*height2)}" ixy="0.0" ixz="0.0" iyy="${mass / 12.0 * (height2*height2 + width*width)}" iyz="0.0" izz="${mass / 12.0 * (width*width + width*width)}"/>
     </inertial>
   </link>
 
@@ -100,14 +101,14 @@
     <collision>
       <origin xyz="0 0 ${height3/2 - axel_offset}" rpy="0 0 0"/>
       <geometry>
-	       <box size="${width} ${width} ${height3}"/>
+        <box size="${width} ${width} ${height3}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 ${height3/2 - axel_offset}" rpy="0 0 0"/>
       <geometry>
-	       <box size="${width} ${width} ${height3}"/>
+        <box size="${width} ${width} ${height3}"/>
       </geometry>
       <material name="orange"/>
     </visual>
@@ -115,15 +116,12 @@
     <inertial>
       <origin xyz="0 0 ${height3/2 - axel_offset}" rpy="0 0 0"/>
       <mass value="${mass}"/>
-      <inertia
-	  ixx="${mass / 12.0 * (width*width + height3*height3)}" ixy="0.0" ixz="0.0"
-	  iyy="${mass / 12.0 * (height3*height3 + width*width)}" iyz="0.0"
-	  izz="${mass / 12.0 * (width*width + width*width)}"/>
+      <inertia ixx="${mass / 12.0 * (width*width + height3*height3)}" ixy="0.0" ixz="0.0" iyy="${mass / 12.0 * (height3*height3 + width*width)}" iyz="0.0" izz="${mass / 12.0 * (width*width + width*width)}"/>
     </inertial>
   </link>
 
   <joint name="hokuyo_joint" type="fixed">
-    <axis xyz="0 1 0" />
+    <axis xyz="0 1 0"/>
     <origin xyz="0 0 ${height3 - axel_offset/2}" rpy="0 0 0"/>
     <parent link="link3"/>
     <child link="hokuyo_link"/>
@@ -134,7 +132,7 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	       <box size="0.1 0.1 0.1"/>
+        <box size="0.1 0.1 0.1"/>
       </geometry>
     </collision>
 
@@ -146,14 +144,14 @@
     </visual>
 
     <inertial>
-      <mass value="1e-5" />
+      <mass value="1e-5"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
     </inertial>
   </link>
 
   <joint name="camera_joint" type="fixed">
-    <axis xyz="0 1 0" />
+    <axis xyz="0 1 0"/>
     <origin xyz="${camera_link} 0 ${height3 - axel_offset*2}" rpy="0 0 0"/>
     <parent link="link3"/>
     <child link="camera_link"/>
@@ -164,37 +162,36 @@
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	       <box size="${camera_link} ${camera_link} ${camera_link}"/>
+        <box size="${camera_link} ${camera_link} ${camera_link}"/>
       </geometry>
     </collision>
 
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
-	       <box size="${camera_link} ${camera_link} ${camera_link}"/>
+        <box size="${camera_link} ${camera_link} ${camera_link}"/>
       </geometry>
       <material name="red"/>
     </visual>
 
     <inertial>
-      <mass value="1e-5" />
+      <mass value="1e-5"/>
       <origin xyz="0 0 0" rpy="0 0 0"/>
-      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
     </inertial>
   </link>
 
   <!-- generate an optical frame http://www.ros.org/reps/rep-0103.html#suffix-frames
-      so that ros and opencv can operate on the camera frame correctly -->
+   so that ros and opencv can operate on the camera frame correctly -->
   <joint name="camera_optical_joint" type="fixed">
-    <!-- these values have to be these values otherwise the gazebo camera image
-        won't be aligned properly with the frame it is supposedly originating from -->
+    <!-- these values have to be these values otherwise the gazebo camera image won't
+     be aligned properly with the frame it is supposedly originating from -->
     <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
     <parent link="camera_link"/>
     <child link="camera_link_optical"/>
   </joint>
 
-  <link name="camera_link_optical">
-  </link>
+  <link name="camera_link_optical"></link>
 
   <ros2_control name="GazeboSystem" type="system">
     <hardware>
