@@ -1,7 +1,11 @@
-<package>
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
   <name>rrbot_gazebo</name>
-  <version>0.1.0</version>
-  <description>rrbot_gazebo</description>
+  <version>0.2.0</version>
+  <description>
+    Launch files and worlds to launch the rrbot in Gazebo, this will publish the joint states in ROS 2.
+  </description>
   <maintainer email="davetcoleman@gmail.com">Dave Coleman</maintainer>
 
   <license>BSD</license>
@@ -12,15 +16,16 @@
 
   <author email="davetcoleman@gmail.com">Dave Coleman</author>
 
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
-  <run_depend>gazebo_plugins</run_depend>
-  <run_depend>gazebo_ros</run_depend>
-  <run_depend>gazebo_ros_control</run_depend>
-  <run_depend>rrbot_control</run_depend>
-  <run_depend>rrbot_description</run_depend>
-  <run_depend>xacro</run_depend>
+  <exec_depend>gazebo_plugins</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+  <exec_depend>gazebo_ros2_control</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rrbot_description</exec_depend>
+  <exec_depend>xacro</exec_depend>
 
   <export>
+      <build_type>ament_cmake</build_type>
   </export>
 </package>

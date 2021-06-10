@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot name="rrbot">
+    <group name="rrbot_arm">
+        <joint name="fixed"/>
+        <joint name="joint1"/>
+        <joint name="joint2"/>
+    </group>
+    <group_state name="ready" group="rrbot_arm">
+        <joint name="joint1" value="0.0"/>
+        <joint name="joint2" value="0.0"/>
+    </group_state>
+    <group_state group="rrbot_arm" name="extended">
+      <joint name="joint1" value="-1.57"/>
+      <joint name="joint2" value="1.57"/>
+    </group_state>
+
+    <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="link1"/>
+
+    <end_effector name="end_effector" parent_link="hokuyo_link" group="rrbot_arm"/>
+
+    <disable_collisions link1="camera_link" link2="link1" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="link2" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="link3" reason="Adjacent"/>
+    <disable_collisions link1="camera_link" link2="hokuyo_link" reason="Never"/>
+    <disable_collisions link1="hokuyo_link" link2="link1" reason="Never"/>
+    <disable_collisions link1="hokuyo_link" link2="link3" reason="Adjacent"/>
+    <disable_collisions link1="link1" link2="link2" reason="Adjacent"/>
+    <disable_collisions link1="link1" link2="link3" reason="Never"/>
+    <disable_collisions link1="link2" link2="link3" reason="Adjacent"/>
+</robot>

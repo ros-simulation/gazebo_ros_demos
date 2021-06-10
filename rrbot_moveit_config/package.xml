@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>rrbot_moveit_config</name>
+  <version>0.2.0</version>
+  <description>Rrbot files used for MoveIt config</description>
+
+  <author email="alejandro@openrobotics.org">Alejandro</author>
+
+  <maintainer email="alejandro@openrobotics.org">Alejandro</maintainer>
+
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <run_depend>rviz2</run_depend>
+
+  <export>
+      <build_type>ament_cmake</build_type>
+  </export>
+</package>
