@@ -15,4 +15,6 @@
     <remap from="/joint_states" to="/rrbot/joint_states" />
   </node>
 
+  <node name="subToJoints_node" pkg="rrbot_control" type="subToJoints.py" output="screen"></node>
+
 </launch>
